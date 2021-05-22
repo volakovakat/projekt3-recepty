@@ -24,7 +24,7 @@ body {
     background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
     background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
     */
-    background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+    background-color: #8e9775;
 
 }
 
@@ -51,7 +51,7 @@ h1 {
     display: flex;
     align-items: center;
     padding: 0 30px;
-    background-image: linear-gradient(120deg, #fda085 0%, #f6d365 100%);
+    background-color: #E28F83;
 }
 
 .logo {
@@ -91,7 +91,7 @@ h1 {
 .hledani input {
     flex: 1;
     padding: 8px 12px;
-    border: 1px solid #feada6;
+    border: 1px solid #E28F83;
     background-color: white;
     border-radius: 5px 0 0 5px;
     font-size: 20px;
@@ -100,8 +100,8 @@ h1 {
 
 .hledani button {
     padding: 8px 12px;
-    border: 1px solid #d86849;
-    background-color: #d86849;
+    border: 1px solid #faf2da;
+    background-color: #8e9775;
     color: white;
     border-radius: 0 5px 5px 0;
     font-size: 20px;
@@ -109,7 +109,7 @@ h1 {
 }
 
 .hledani button:hover {
-    background-color: #ce3b12;
+    background-color: #e28f83;
     cursor: pointer;
 }
 
@@ -125,7 +125,7 @@ h1 {
 
 
 
-.recepty {
+.receptar {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     padding: 10px;
@@ -154,7 +154,7 @@ h1 {
 }
 
 .recept:hover h3 {
-    color: #fda085;
+    color: #e28f83;
 }
 
 .recept-obrazek {
@@ -245,5 +245,5 @@ h1 {
 }
 
 .recept-detail h1 {
-    color: #feada6;
+    color: #e28f83;
 }
