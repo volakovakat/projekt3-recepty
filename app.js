@@ -5,6 +5,9 @@ HTML vzor, jak vygenerovaný recept vypadá, je zakomentovaný v index.html. */
 let receptar = document.querySelector('.receptar');
 receptar.classList.add('receptar');
 
+let hlavicka = document.querySelector('.hlavicka');
+
+
 function pridejReceptDoMenu(recept) {
     let divRecept = document.createElement('div');
     divRecept.classList.add('recept');
@@ -55,7 +58,25 @@ function hledatRecept() {
 }
 
 /* 3) Doplň filtrovanání receptů podle kategorie. */
+function hledatPodleKategorie(select) {
+    if (!select) {
+        return;
+    }
+    receptar.innerHTML = '';
+    let kategorie = select.value;
+    if (kategorie === '') {
+        vypisRecepty();
+    } else {
+        for (let i = 0; i < recepty.length; i++) {
+            if (recepty[i].kategorie === kategorie) {
+                pridejReceptDoMenu(recepty[i]);
+            } 
+        }
+    }
+  }
 
+
+hledatPodleKategorie();
 /* 4) Doplň řazení receptů podle hodnocení. */
 
 /* 5) Na recepty v seznamu by mělo jít kliknout a na pravé polovině, se objeví detail receptu.
