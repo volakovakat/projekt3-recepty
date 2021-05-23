@@ -2,6 +2,7 @@
 
 1) Do prvku s id="receptar" vygeneruj z dat seznam všech receptů z naší "databáze".
 HTML vzor, jak vygenerovaný recept vypadá, je zakomentovaný v index.html. */
+let kategorie;
 let receptar = document.querySelector('.receptar');
 receptar.classList.add('receptar');
 
@@ -63,7 +64,7 @@ function hledatPodleKategorie(select) {
         return;
     }
     receptar.innerHTML = '';
-    let kategorie = select.value;
+    kategorie = select.value;
     if (kategorie === '') {
         vypisRecepty();
     } else {
@@ -75,9 +76,40 @@ function hledatPodleKategorie(select) {
     }
   }
 
-
 hledatPodleKategorie();
+
 /* 4) Doplň řazení receptů podle hodnocení. */
+function seraditPodleHodnoceni(select) {
+    if (!select) {
+        return;
+    }
+    receptar.innerHTML = '';
+    let razeni = select.value;
+    if (razeni === '') {
+        vypisRecepty();
+    } else if (razeni === "1") {
+        recepty.sort(function(recept1, recept2){
+            return recept2.hodnoceni - recept1.hodnoceni
+        });
+        vypisRecepty();
+        } else {
+            if (razeni === "2") {
+                recepty.sort(function(recept1, recept2){
+                    return recept1.hodnoceni - recept2.hodnoceni
+                });
+                vypisRecepty();
+            }
+            
+        }
+    }
+/*     kategorie = select.value;
+    if (recepty[i].kategorie === kategorie) {
+    pridejReceptDoMenu(recepty[i]);
+    recepty.kategorie.sort(function(recept1, recept2){return recept1.hodnoceni > recept2.hodnoceni});
+    hledatPodleKategorie();
+  } */
+  seraditPodleHodnoceni();
+
 
 /* 5) Na recepty v seznamu by mělo jít kliknout a na pravé polovině, se objeví detail receptu.
 Doplň patričné údaje receptu do HTML prvků s ID recept-foto, recept-kategorie,
