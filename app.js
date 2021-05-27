@@ -130,13 +130,25 @@ function receptInfo(recept) {
 
 function precistRecept(id) {
     for (let i = 0; i < recepty.length; i++) {
-        if (recepty[i].id === id) {
-            receptInfo(recepty[i]);
-        }
+            if (recepty[i].id === id) {
+                receptInfo(recepty[i]);
+                localStorage.receptid = id;
+            }
     } 
 };
 
-precistRecept(0);
-
 /* 6) Poslední vybraný recept ulož do Local Storage, aby se při novém otevření aplikace načetl.
 */
+
+    function nacteniPoslednihoReceptu() {
+        let receptid = localStorage.receptid;
+        if (receptid != undefined) {
+            precistRecept(Number(receptid));
+        } else {
+            precistRecept(0);
+        }
+    }
+    nacteniPoslednihoReceptu();
+
+    
+     
